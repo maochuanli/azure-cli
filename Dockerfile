@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/azure-cli
 
-RUN useradd -ms /bin/bash  azure
+RUN addgroup -S azuregroup && adduser -S azure -G azuregroup
 
 USER azure
 WORKDIR /home/azure
